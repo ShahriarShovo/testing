@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block headers %}
+
+
+
+{% include 'include/main_include_file.html' %}
+
+
+{% endblock headers %}
+
+
+
+{% block body %}
+
+
+<header class="section-header">
+   
+    </header> <!-- section-header.// -->
+    <section class="section-content padding-y bg">
+    <div class="container">
+    
+    
+    
+    <!-- ============================ COMPONENT 2 ================================= -->
+    <div class="row">
+            <main class="col-md-8">
+    
+    <article class="card mb-4">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Review cart</h4>
+       
+        <div class="row">
+            {% for cart in carts %}
+            <div class="col-md-6">
+                <figure class="itemside  mb-4">
+                    <div class="aside"><img src="/media/{{cart.item.product_image}}" class="border img-sm"></div>
+                    <figcaption class="info">
+                        <p>{{cart.item.product_name}} | {{cart.item.product_brand}} </p>
+                        <span class="text-muted">&#2547;{{cart.item.product_price}}</span>
+                    </figcaption>
+                </figure>
+            </div> <!-- col.// -->
+            {% endfor %}
+        </div> <!-- row.// -->
+       
+    </div> <!-- card-body.// -->
+    </article> <!-- card.// -->
+    
+    
+    {% include "accounts/user_contact.html" %}
+    {% include "accounts/user_delivery.html" %}
+    
+    
+</main> <!-- col.// -->
+<aside class="col-md-4">
+    <div class="card">
+<div class="card-body">
+    <dl class="dlist-align">
+      <dt>Total price:</dt>
+      <dd class="text-right">$69.97</dd>
+    </dl>
+    <dl class="dlist-align">
+      <dt>Tax:</dt>
+      <dd class="text-right"> $10.00</dd>
+    </dl>
+    <dl class="dlist-align">
+      <dt>Total:</dt>
+      <dd class="text-right text-dark b"><strong>$59.97</strong></dd>
+    </dl>
+    <hr>
+    <p class="text-center mb-3">
+        <img height="26" src="{% static 'images/misc/payments.png' %}" >
+    </p>
+    <a href="./place-order.html" class="btn btn-primary btn-block"> Checkout </a>
+    
+</div> <!-- card-body.// -->
+</div> <!-- card.// -->
+</aside> <!-- col.// -->
+</div> <!-- row.// -->
+    
+    </div> 
+    </section>
+   
+    {% include "include/footer.html" %}
+
+
+{% endblock body %}

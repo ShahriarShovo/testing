@@ -1,0 +1,29 @@
+<article class="card mb-4">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Contact info</h4>
+        <form method="POST" action="{% url 'update_user_info'%}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label>Frst name</label>
+                    <input type="text" name='first_name' placeholder="{{user_first_name}}" class="form-control">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label>Last name</label>
+                    <input type="text" name='last_name' placeholder="{{user_last_name}}" class="form-control">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label>Phone</label>
+                    <input type="text" name='phone' value="+880{{user_phone}}" class="form-control">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label>Email</label>
+                    <input type="email" name='email' placeholder="{{user_email}}" class="form-control">
+                </div>
+                <div class="form-group col-sm-4">
+                    <button type="submit" class="btn btn-primary "> Update  </button>
+                </div> 
+            </div> <!-- row.// -->	
+        </form>
+    </div> <!-- card-body.// -->
+    </article> <!-- card.// -->

@@ -1,0 +1,1 @@
+from product_categories.views.context_processors import categories

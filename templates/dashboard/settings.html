@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block headers %}
+
+{% include 'include/main_include_file.html' %}
+
+{% endblock headers %}
+
+
+
+{% block body %}
+
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y bg">
+
+    <div class="container">
+        <div class="row">
+            {% include "dashboard/user_options.html" %}
+        <main class="col-md-9">
+            <article class="card">
+            <header class="card-header">
+                <strong class="d-inline-block mr-3">USER ID: 6123456789</strong>
+                <span>Login Date: 16 December 2018</span>
+            </header>
+            <div class="card-body">
+                {% include "accounts/user_contact.html" %}
+                {% include "accounts/user_delivery.html" %}
+            </div>
+            <div class="table-responsive">
+          
+            </div> 
+            </article> 
+        </main>
+    </div> <!-- row.// -->
+    </div>
+    </section>
+   
+{% include "include/footer.html" %}
+
+
+{% endblock body %}

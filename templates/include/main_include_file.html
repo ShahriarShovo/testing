@@ -1,0 +1,15 @@
+{% load static %}
+
+{% block header %}
+
+{% include 'include/top_header.html' %}
+{% if user.is_authenticated %}
+{% include 'include/user_loged_header.html' %}
+{% else %}
+{% include 'include/second_top_header.html' %}
+{% endif %}
+
+{% endblock header %}
+
+
+

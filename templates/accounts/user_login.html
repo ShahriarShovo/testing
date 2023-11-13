@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block headers %}
+
+{% include 'include/main_include_file.html' %}
+
+{% endblock headers %}
+
+
+
+
+{% block body %}
+
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y" style="min-height:84vh">
+
+    <!-- ============================ COMPONENT LOGIN   ================================= -->
+        <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+          <div class="card-body">
+          <h4 class="card-title mb-4">Sign in</h4>
+          <form action="{% url 'user_login' %}" method="POST">
+            {% csrf_token %}
+              <div class="form-group">
+                 <input type="text" name="username" class="form-control" placeholder="Email or User Name" >
+              </div> <!-- form-group// -->
+              <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" >
+              </div> <!-- form-group// -->
+              
+              <div class="form-group">
+                  <a href="{% url 'forget_password' %}" class="float-right">Forgot password?</a> 
+               
+              </div> <!-- form-group form-check .// -->
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+              </div> <!-- form-group// -->
+  </div> <!-- form-group// --> 
+
+  <style>
+    .bordert{
+      border-top: 1px solid #aaa;
+      position: relative;
+  }
+  .bordert:after{
+      content: "or connect with";
+      position: absolute;
+      top: -13px;
+      left: 33%;
+      background-color: #fff;
+      padding: 0px 8px;
+  }
+  </style>
+
+  <div class="mx-3 my-2 py-2 bordert">
+  <div class="text-center py-3">
+    </div>
+  </div>
+          </form>
+          <div class="container">
+            <div class="row justify-content-center align-items-center">
+              <div class="p-2 bd-highlight"><a href="{% url 'facebook_login' %}" > <i class="fab fa-facebook-f fa-2x" style="color: #3b5998;"></i> </a></div>
+              <div class="p-2 bd-highlight"><a href="{% url 'google_login' %}" ><i class="fab fa-google fa-2x" style="color: #dd4b39;"></i> </a></div>
+              <div class="p-2 bd-highlight"><a href="{% url 'github_login' %}" ><i class="fab fa-github fa-2x" style="color: #333333;"></i></a></div>
+            </div>
+            <br>
+        </div>
+        
+
+          </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+    
+         <p class="text-center mt-4">Don't have account? <a href="{% url 'user_registration' %}">Sign up</a></p>
+         <br><br>
+    <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+
+
+
+
+
+
+
+
+
+{% endblock body %}
